@@ -47,7 +47,7 @@ jobs:
           repository: ${{ github.repository }}.wiki
           path: 'wiki'
       - name: Run a one-line script
-        run:  echo Generated content >> target/wiki/generated page.md
+        run:  echo Generated content >> wiki/generated page.md
       - uses: OrlovM/Wiki-Action@v1
         with:
           path: 'wiki'
