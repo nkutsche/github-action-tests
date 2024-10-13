@@ -39,7 +39,7 @@ jobs:
           echo test, and deploy your project.
       - name: Run CTRF annotations
         run: npx github-actions-ctrf ctrf-report.json
-        if: always()
+        if: ${{ hashFiles('target/surefire-reports/qt3ts-runner-fn-*.xml') }}
   wiki-update:
     runs-on: ubuntu-latest
     needs: [build]
