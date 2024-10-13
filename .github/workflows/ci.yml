@@ -63,5 +63,5 @@ jobs:
           GH_PAT: ${{ secrets.GITHUB_TOKEN }}
           MD_FOLDER: target/wiki
           OWNER: nkutsche
-          REPO_NAME: ${{ github.repository }}
+          REPO_NAME: github-action-tests
   
