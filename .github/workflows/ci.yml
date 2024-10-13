@@ -44,7 +44,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: ${{ github.repository }}/wiki
+          repository: ${{ github.repository }}.wiki
           path: 'target/wiki'
       - name: Run a one-line script
         run: echo Generated content >> target/wiki/generated page.md
