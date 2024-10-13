@@ -49,7 +49,7 @@ jobs:
       - name: Run a one-line script
         run: |
           mkdir -p target/wiki
-          echo Generated content >> target/wiki/generated page.md
+          echo Generated content >> target/wiki/generated_page_2.md
 #      - uses: OrlovM/Wiki-Action@v1
 #        with:
 #          path: 'wiki'
