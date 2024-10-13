@@ -59,8 +59,8 @@ jobs:
         env:
           ACTION_MAIL: nico@nkutsche.com
           ACTION_NAME: nkutsche
-#          GH_PAT: ${{ secrets.GH_PAT }}
-          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+#          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
           MD_FOLDER: target/wiki
           OWNER: nkutsche
           REPO_NAME: github-action-tests
