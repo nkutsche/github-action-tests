@@ -37,6 +37,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      - name: Run CTRF annotations
+        run: npx github-actions-ctrf ctrf-report.json
+        if: always()
   wiki-update:
     runs-on: ubuntu-latest
     needs: [build]
