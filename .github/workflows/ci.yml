@@ -42,14 +42,26 @@ jobs:
     needs: [build]
     name: Update wiki with generated content
     steps:
-      - uses: actions/checkout@v4
-        with:
-          repository: ${{ github.repository }}.wiki
-          path: 'wiki'
+#      - uses: actions/checkout@v4
+#        with:
+#          repository: ${{ github.repository }}.wiki
+#          path: 'wiki'
       - name: Run a one-line script
-        run:  echo Generated content >> wiki/generated page.md
-      - uses: OrlovM/Wiki-Action@v1
-        with:
-          path: 'wiki'
-          token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -P target/wiki
+          echo Generated content >> target/wiki/generated page.md
+#      - uses: OrlovM/Wiki-Action@v1
+#        with:
+#          path: 'wiki'
+#          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload Release Notes to Wiki
+        uses: docker://decathlon/wiki-page-creator-action:latest
+        env:
+          ACTION_MAIL: nico@nkutsche.com
+          ACTION_NAME: nkutsche
+#          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+          MD_FOLDER: wiki
+          OWNER: nkutsche
+          REPO_NAME: ${{ github.repository }}.wiki
   
