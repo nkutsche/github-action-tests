@@ -61,7 +61,7 @@ jobs:
           ACTION_NAME: nkutsche
 #          GH_PAT: ${{ secrets.GH_PAT }}
           GH_PAT: ${{ secrets.GITHUB_TOKEN }}
-          MD_FOLDER: wiki
+          MD_FOLDER: target/wiki
           OWNER: nkutsche
-          REPO_NAME: ${{ github.repository }}.wiki
+          REPO_NAME: ${{ github.repository }}
   
